@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    title Wave Cloud
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/public/css/style.css')
+    block stylesheets
+
+  body
+    .container
+      .navbar.navbar-inverse.navbar-fixed-top
+        a.navbar-brand(href='/')
+          span.logo #
+          span Wave Cloud
+    .container
+      block content
+    footer
+      div.text-center
+        span.
+          Designed and build by <a href='https://github.com/dhruvasagar'
+          target='_blank'>Dhruva Sagar</a>
+          @ <a href="http://tarkalabs.com">Tarka Labs</a>
+    script(src="//code.jquery.com/jquery.min.js")
+    script(src="/public/js/app.min.js")
+    block scripts
