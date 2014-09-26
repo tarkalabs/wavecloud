@@ -1,3 +1,7 @@
+# Wave Cloud
+
+## Deploying to server
+
 Add remote server url to git :
 
 ```sh
