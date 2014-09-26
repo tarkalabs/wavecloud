@@ -1,12 +1,14 @@
 extends layout
 
 block content
-  .col-md-4.center
-    .panel.panel-default
-      .panel-heading
-        h3.panel-title Playing Media
-      .panel-body
-        .wrapper.pull-left
-          img(src=waveformPNG)
-          #overlay
-        audio#player(src='/public/media/test.mp3', controls)
+  - for (var key in waveforms) {
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title= waveforms[key].name
+        .panel-body
+          .wrapper.pull-left
+            img(src=waveforms[key].imageFile)
+            .overlay
+          audio.player(src=waveforms[key].mediaFile, controls)
+    - }

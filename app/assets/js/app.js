@@ -1,10 +1,13 @@
-document.body.onload = function () {
-  var player = document.getElementById('player');
-  var overlay = document.getElementById('overlay');
-  var initialWidth = overlay.offsetWidth;
-  player.ontimeupdate = function () {
-    var updatedWidth = initialWidth * (1 - (player.currentTime / player.duration));
-    console.log(updatedWidth);
-    overlay.style.width = updatedWidth + 'px';
+function onTimeUpdate(overlay) {
+  return function () {
+    var updatedWidth = this.currentTime * 300 / this.duration;
+    overlay.width(updatedWidth + 'px');
   };
-};
+}
+
+$(document).ready(function () {
+  $('.player').each(function () {
+    var player = $(this);
+    player.on('timeupdate', onTimeUpdate(player.prev().find('.overlay')));
+  });
+});
