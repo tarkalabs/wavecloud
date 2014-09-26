@@ -30,7 +30,7 @@ gulp.task('lint', function () {
 
 gulp.task('scripts', function () {
   return gulp.src(paths.appjs)
-             .pipe(uglify())
+             // .pipe(uglify())
              .pipe(concat('app.min.js'))
              .pipe(gulp.dest('public/js'));
 });

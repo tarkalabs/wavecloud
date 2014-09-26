@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  .col-md-4.text-center
-    img(src=waveformPNG)
+  .col-md-4.center
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Playing Media
+      .panel-body
+        .wrapper.pull-left
+          img(src=waveformPNG)
+          #overlay
+        audio#player(src='/public/media/test.mp3', controls)

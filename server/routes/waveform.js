@@ -2,7 +2,7 @@ var exec = require('child_process').exec;
 
 module.exports = {
   index: function (req, res) {
-    exec('waveform -i test.mp3 -h 100 -t 25 -w 400 -m -o public/img/Chaz.png', function (error, stdout, stderr) {
+    exec('waveform -i public/media/test.mp3 -h 100 -t 25 -w 300 -m -o public/img/test.png', function (error, stdout, stderr) {
       var waveformPNG = '/public/img/Chaz.png';
       if (error) {
         console.log('dispensing error message:');
@@ -12,7 +12,7 @@ module.exports = {
         console.log('error message dispensed');
         waveformPNG = '';
       }
-      res.render('index', {waveformPNG: '/public/img/Chaz.png'});
+      res.render('index', {waveformPNG: '/public/img/test.png'});
     });
   }
 };
