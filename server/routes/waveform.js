@@ -5,7 +5,7 @@ var _ = require('lodash'),
 
 function waveformCLI(mediaFile, imageFile) {
   return 'waveform -i ' + mediaFile + ' ' +
-         '-h 100 -t 25 -w 300 -m -o ' + imageFile + '.png';
+         '-h 100 -t 25 -w 300 -m -o ' + imageFile;
 }
 
 function generateWaveform(mediaFile, imagePath, callback) {
